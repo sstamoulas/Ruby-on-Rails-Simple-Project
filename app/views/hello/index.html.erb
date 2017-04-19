@@ -1,0 +1,25 @@
+<h1><%= @message %></h1>
+<p>This is a greeting from app/views/hello/index.html.erb</p>
+<p>Using for i in 1..@count</p>
+<% for i in 1..@count %>
+	<p><%= @bonus %></p>
+<% end %>
+
+<!--different way to do the same as above-->
+<!-- <p>@count.times do</p>
+<% @count.times do %>
+	<p><%= @bonus %></p>
+<% end %>
+
+<p>@count.times with {}</p>
+<% @count.times { %>
+	<p><%= @bonus %></p>
+<% } %> -->
+
+<% content_for(:list) do %>
+  <ol>
+  <% for i in 1..@count %>
+    <li><%= @bonus %></li>
+  <% end %>
+  </ol>
+<% end %>
